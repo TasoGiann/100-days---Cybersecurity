@@ -1,14 +1,14 @@
 # Day 5 – SSH Brute Force with Hydra
 
-## 🎯 Goal
+## Goal
 Perform SSH brute force in a controlled cybersecurity lab to understand password attacks and authentication behavior.
 
-## 🧪 Lab Setup
+## Lab Setup
 - Attacker: Kali Linux (192.168.160.10)
 - Target: Ubuntu Server (192.168.160.129)
 - Network: Host-only (isolated)
 
-## 🔧 Commands Used
+## Commands Used
 ```bash
 ip a
 ping 192.168.160.129
