@@ -1,4 +1,4 @@
-# Day 2 - Internal Network Visibility & Scanning 🕵️‍♂️
+# Day 2 - Internal Network Visibility & Scanning 
 
 ## Objective
 Make Kali reach Ubuntu through the internal lab network.
