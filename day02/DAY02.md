@@ -1,20 +1,10 @@
-# Day 2 - Internal Network Visibility & Scanning 
+# Day 2 - Network Reachability & Recon
 
-## Objective
-Make Kali reach Ubuntu through the internal lab network.
+Commands:
+- ping 192.168.160.x
+- nmap -sV 192.168.160.x
 
-## Tests performed
-- Ping test
-- nmap scan
-
-## Commands
-ping 192.168...
-
-nmap -sV 192.168...
-
-
-## Results: 
-
-✔ Ubuntu is alive
-
-✔ Port discovered: 22/tcp SSH
+Findings:
+- Host is reachable.
+- Port 22 open (SSH).
+- OS fingerprint indicates Ubuntu-based SSH daemon.
