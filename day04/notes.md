@@ -1,14 +1,10 @@
 # Day 4 - Authenticated Access & Initial Enumeration
 
 Commands:
-
-whoami
-
-uname -a
-
-ss -tulnp
-
-ip a
+- whoami
+- uname -a
+- ss -tulnp
+- ip a
 
 Findings:
 - Logged in as ubuntu
