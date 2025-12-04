@@ -1,4 +1,4 @@
-## Day 1 - Lab Setup 
+# Day 1 - Lab Setup
 
 ## What I configured
 - Kali Linux attacker VM
