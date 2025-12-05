@@ -11,7 +11,6 @@ nc 192.168.160.x 22
 Why: Netcat (nc) allows us to raw-connect to a port. The service usually sends a "Banner" (text string) identifying itself.
 
 2. Verbose Connection
-Bash
 
 ssh -v 192.168.160.x
 Why: The -v flag in SSH forces the client to display debug info, revealing the exact protocol versions and encryption methods supported by the server.
