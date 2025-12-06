@@ -1,3 +1,5 @@
+Markdown
+
 # 🔐 Day 4: Initial Access & Post-Exploitation
 
 ## 📝 Executive Summary
@@ -10,13 +12,18 @@ After confirming the SSH service was active, I utilized valid credentials (simul
 ssh ubuntu@192.168.160.x
 Credentials: ubuntu / password (Lab Configuration)
 
+Status: Access Granted
+
 2. Local Enumeration
-Once logged in, I ran the following to map the system:
+Once logged in, I ran the following commands to establish situational awareness:
 
-whoami: Confirmed I am the 'ubuntu' user.
+whoami: Confirmed I am running as the ubuntu user (low privilege).
 
-uname -a: Checks Kernel version.
+uname -a: Verified the Kernel version (6.8.0-88-generic). This is useful for checking Kernel exploits.
 
-ss -tulnp: Checks for other internal listening ports.
+ss -tulnp: Checked for internal listening ports.
 
-ip a: Confirms network interfaces.
+Observation: No hidden internal services (like MySQL on 3306) were found listening locally.
+
+ip a: Confirmed the network interface matches the target IP.
+
