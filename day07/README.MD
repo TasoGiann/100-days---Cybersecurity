@@ -1,6 +1,6 @@
-# 👑 Day 7: Linux Privilege Escalation (Sudo Rights)
+# Day 7: Linux Privilege Escalation (Sudo Rights)
 
-## 📝 Executive Summary
+## Executive Summary
 Getting a foothold is only the beginning. To fully compromise a machine, one must escalate privileges to `root`. Today, I explored **Sudo Misconfigurations**, specifically abusing "NOPASSWD" entries which allow a standard user to run commands with administrative privileges.
 
 ## 💻 Technical Analysis
