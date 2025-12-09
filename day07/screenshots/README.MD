@@ -12,8 +12,6 @@ Command: `sudo -l`
 * **Finding:** The user `ubuntu` is allowed to run `/usr/bin/python3` as root without a password.
 * **Risk:** Python has a module (`os`) that allows interaction with the operating system. If we can run Python as root, we can tell the OS to give us a shell.
 
-![Sudo Permissions](./images/sudo_check.png)
-
 ### 2. The Exploit (GTFOBins)
 Using the methodology from **GTFOBins**, I constructed a one-line payload to spawn a system shell (`/bin/sh`) via Python.
 
