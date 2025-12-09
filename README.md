@@ -19,3 +19,5 @@ I am documenting my journey from beginner to Red Teamer. This repository contain
 | **03** | [Service Enumeration](./day03) | Netcat, SSH Fingerprinting | ✅ |
 | **04** | [Authenticated Access](./day04) | SSH, Linux CLI | ✅ |
 | **05** | [Brute Force Attack](./day05) | Hydra, Password Cracking | ✅ |
+| **06** | [Ingress Tool Transfer](./Day-006-File-Transfers) | Python Server, Wget | ✅ |
+| **07** | [Privilege Escalation](./Day-007-Privilege-Escalation-Sudo) | Sudo Abuse, GTFOBins | ✅ |
