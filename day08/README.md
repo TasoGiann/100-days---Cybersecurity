@@ -40,11 +40,3 @@ This gave me a clear picture of why enumeration is necessary — it reveals thin
 
 ---
 
-## 📸 Screenshots
-Place your screenshots inside:  
-`day08/screenshots/`
-
-Suggested images:
-- Kali hosting LinPEAS with Python server  
-- Ubuntu downloading linpeas.sh  
-- LinPEAS initial scan output  
