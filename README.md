@@ -1,9 +1,9 @@
 # 🛡️ 100 Days of Cybersecurity
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow) ![Focus](https://img.shields.io/badge/Focus-Red%20Teaming-red)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow) ![Focus](https://img.shields.io/badge/Focus-Red%20%26%20Blue%20Team-blueviolet)
 
 ## 🚀 About
-I am documenting my journey from beginner to Red Teamer. This repository contains my daily logs, lab configurations, and attack write-ups.
+I am documenting my 0-100 journey into Cybersecurity. My goal is to understand the full lifecycle of an attack by acting as both the **Attacker (Red Team)** and the **Defender (Blue Team)**.
 
 **Current Lab Setup:**
 * **Attacker:** Kali Linux (VMware)
