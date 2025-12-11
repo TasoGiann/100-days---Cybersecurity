@@ -21,3 +21,4 @@ I am documenting my journey from beginner to Red Teamer. This repository contain
 | **05** | [Brute Force Attack](./day05) | Hydra, Password Cracking | ✅ |
 | **06** | [Ingress Tool Transfer](./day06) | Python Server, Wget | ✅ |
 | **07** | [Privilege Escalation](./day07) | Sudo Abuse, GTFOBins | ✅ |
+| **08** | [Privilege Escalation (SUID)](./day08) | SUID, Find Exploitation | ✅ |
