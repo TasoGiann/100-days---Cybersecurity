@@ -22,3 +22,4 @@ I am documenting my 0-100 journey into Cybersecurity. My goal is to understand t
 | **06** | [Ingress Tool Transfer](./day06) | Python Server, Wget | ✅ |
 | **07** | [Privilege Escalation](./day07) | Sudo Abuse, GTFOBins | ✅ |
 | **08** | [Privilege Escalation (SUID)](./day08) | SUID, Find Exploitation | ✅ |
+| **09** | [Privilege Escalation (Capabilities)](./day09) | Getcap, Perl Exploitation | ✅ |
