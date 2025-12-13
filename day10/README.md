@@ -8,8 +8,6 @@ Automated tasks (Cron Jobs) are essential for system administration. However, if
 ### 1. Enumeration
 I identified a script `/tmp/backup.sh` that was world-writable (`777` permissions). Based on system behavior, I suspected this script was being executed automatically by a cron job.
 
-![File Permissions](cron_permissions.png)
-
 ### 2. The Exploit (Reverse Shell)
 Since I could modify the script, I replaced its valid code with a malicious "Reverse Shell" payload.
 
