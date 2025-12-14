@@ -24,3 +24,4 @@ I am documenting my 0-100 journey into Cybersecurity. My goal is to understand t
 | **08** | [Privilege Escalation (SUID)](./day08) | SUID, Find Exploitation | ✅ |
 | **09** | [Privilege Escalation (Capabilities)](./day09) | Getcap, Perl Exploitation | ✅ |
 | **10** | [Privilege Escalation (Cron)](./day10) | Cron Abuse, Reverse Shells | ✅ |
+| **11** | [Log Analysis (Linux)](./day11) | Grep, Auth.log Analysis | ✅ |
