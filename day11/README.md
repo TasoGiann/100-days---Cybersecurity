@@ -11,3 +11,14 @@ On Day 5, I attacked the SSH service. In the logs, this appears as a massive spi
 **Command:**
 ```bash
 sudo grep "Failed password" /var/log/auth.log | head -n 10
+Evidence: The logs show repeated login failures from the attacker IP (192.168.160.130), indicating an automated dictionary attack rather than a user mistyping their password.
+
+2. Detecting Privilege Escalation (Sudo)
+On Day 7, I abused a sudo misconfiguration. While the attack felt "stealthy" at the time, sudo logs every command execution.
+
+Command:
+
+Bash
+
+sudo grep "COMMAND" /var/log/auth.log | grep "python"
+Evidence: The log clearly shows the user ubuntu executing python3 with root privileges, specifically running the payload to spawn a shell (/bin/sh). This is definitive proof of compromised credentials being used for elevation.
