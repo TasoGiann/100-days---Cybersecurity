@@ -25,3 +25,4 @@ I am documenting my 0-100 journey into Cybersecurity. My goal is to understand t
 | **09** | [Privilege Escalation (Capabilities)](./day09) | Getcap, Perl Exploitation | ✅ |
 | **10** | [Privilege Escalation (Cron)](./day10) | Cron Abuse, Reverse Shells | ✅ |
 | **11** | [Log Analysis (Linux)](./day11) | Grep, Auth.log Analysis | ✅ |
+| **12** | [SSH Hardening](./day12) | Security Config, Attack Surface Reduction | ✅ |
