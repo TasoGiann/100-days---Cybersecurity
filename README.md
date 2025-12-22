@@ -26,3 +26,4 @@ I am documenting my 0-100 journey into Cybersecurity. My goal is to understand t
 | **10** | [Privilege Escalation (Cron)](./day10) | Cron Abuse, Reverse Shells | ✅ |
 | **11** | [Log Analysis (Linux)](./day11) | Grep, Auth.log Analysis | ✅ |
 | **12** | [SSH Hardening](./day12) | Security Config, Attack Surface Reduction | ✅ |
+| **13** | [Firewall Configuration (UFW)](./day13) | UFW, Packet Filtering | ✅ |
