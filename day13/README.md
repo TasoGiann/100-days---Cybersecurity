@@ -13,3 +13,10 @@ I configured UFW to block all incoming connections by default. I then created a 
 sudo ufw default deny incoming
 sudo ufw allow 2222/tcp
 sudo ufw enable
+
+2. Verification (Nmap Scan)
+To verify the firewall's effectiveness, I ran an Nmap scan from the attacker machine.
+
+Before: The system would respond with "Closed" for unused ports (sending a generic "Go Away" signal).
+
+After: The system now lists unused ports as "Filtered." This means the firewall is dropping the packets entirely, making the system appear non-existent to unauthorized probes.
