@@ -11,8 +11,6 @@ I installed Fail2Ban and configured a "Jail" for the SSH service.
 * **Action:** Ban the source IP address for 10 minutes.
 * **Customization:** I ensured Fail2Ban was monitoring Port 2222 (my hardened SSH port) rather than the default Port 22.
 
-![Fail2Ban Config](./fail2ban_config.png)
-
 ### 2. Testing the Defense
 I simulated a brute-force attempt from my Kali machine. After the 3rd failed password entry, Fail2Ban detected the pattern and instructed the firewall to drop all traffic from the attacker's IP.
 
