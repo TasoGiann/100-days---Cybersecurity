@@ -22,5 +22,3 @@ I modified `/etc/issue.net` to include a warning message for any user attempting
 > "UNAUTHORIZED ACCESS PROHIBITED. ALL ACTIVITY IS LOGGED."
 
 This simple change adds a legal layer of defense and slightly improved the system's hardening score upon re-scanning.
-
-![Audit Suggestions](./audit_suggestions.png)
