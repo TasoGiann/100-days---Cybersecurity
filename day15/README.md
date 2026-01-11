@@ -8,7 +8,7 @@ After spending four days implementing specific defenses (SSH, UFW, Fail2Ban), I 
 ### 1. The Initial Scan
 I ran `lynis audit system` to check over 300+ security controls, including kernel hardening, memory protection, and file permissions.
 
-* **Hardening Index:** My initial score was **[INSERT YOUR SCORE]**.
+* **Hardening Index:** My initial score was **59**.
 * **Findings:** The audit confirmed my Firewall and SSH hardening were active but highlighted several other areas for improvement, such as banner messages and compiler permissions.
 
 <img width="857" height="388" alt="Screenshot 2026-01-11 183705" src="https://github.com/user-attachments/assets/273728c3-7c05-42fa-8a6c-8a46725cd683" />
