@@ -1,86 +1,58 @@
-🛡️ Day 16: Authentication Log Analysis & Brute Force Detection
-📑 Executive Summary
+# 🛡️ Day 16: Authentication Log Analysis & Brute Force Detection
 
-After implementing active defense mechanisms using Fail2Ban, I focused on analyzing Linux authentication logs to understand how brute-force login attempts appear from a defender’s perspective.
+## 📝 Executive Summary
+After implementing active defense using **Fail2Ban**, I focused on analyzing Linux authentication logs to understand how brute-force login attempts appear from a defender’s perspective. Authentication logs provide visibility into login activity and allow defenders to detect suspicious behavior, identify repeated failed attempts, and verify whether automated protections are functioning correctly.
 
-Authentication logs provide visibility into login activity and allow defenders to detect suspicious behavior, identify repeated failed login attempts, and verify whether automated defensive controls are functioning correctly.
+## 💻 Analysis Steps
 
-This exercise demonstrates how log analysis supports threat detection and incident investigation in a Blue Team environment.
+### 1. The Objective
+I investigated authentication activity by analyzing Linux authentication logs to detect failed login attempts that may indicate brute-force behavior.
 
-💻 Analysis Steps
-1. The Objective
+Linux records authentication events inside:
 
-The goal of this exercise was to:
-
-Identify failed authentication attempts
-
-Detect potential brute-force behavior
-
-Extract source IP addresses from logs
-
-Validate that Fail2Ban successfully blocks malicious activity
-
-Linux stores authentication activity in:
-
+```bash
 /var/log/auth.log
+```
 
-This file contains both successful and failed login attempts, making it a primary source of evidence during investigations.
+This file contains successful logins, failed login attempts, and invalid user access attempts, making it a primary source of evidence during security investigations.
 
-2. Filtering Failed Login Attempts
+### 2. Filtering Failed Login Attempts
+To isolate suspicious activity, I filtered authentication logs for failed login attempts:
 
-To isolate suspicious activity, authentication logs were filtered for failed login attempts:
-
+```bash
 sudo grep "Failed password" /var/log/auth.log
+```
 
-This allowed failed authentication events to be separated from normal system activity.
+* **Observation:** Multiple failed attempts from the same source IP may indicate automated password guessing.
+* **Purpose:** Quickly identify suspicious authentication behavior within large log files.
 
-Repeated failures originating from the same IP address may indicate automated password guessing or brute-force attacks.
+### 3. Measuring Failed Attempts
+To understand the scale of authentication failures, I counted the total number of failed login attempts:
 
-3. Counting Authentication Failures
-
-To evaluate the scale of failed login activity, the total number of failed attempts was counted:
-
+```bash
 sudo grep "Failed password" /var/log/auth.log | wc -l
+```
 
-Counting failures helps determine whether login attempts represent normal user errors or suspicious automated behavior.
+* **Reason:** Counting failures helps distinguish between normal user mistakes and potential brute-force activity.
+* **Result:** Authentication failures can be quantified and monitored over time.
 
-4. Identifying Source IP Addresses
+### 4. Identifying Source IP Addresses
+Each failed authentication entry includes the originating IP address.
 
-Each authentication failure entry includes the originating IP address.
+Example log entry:
 
-Example:
-
+```
 Failed password for invalid user admin from 192.168.1.25 port 53422 ssh2
+```
 
+* **Key Detail:** The source IP identifies where login attempts originate.
+* **Security Value:** Enables investigation, blocking, or correlation with other events.
 
-The source IP provides valuable information for investigation and allows defenders to trace the origin of suspicious activity.
+### 5. Validating Active Defense
+To confirm that automated protection was functioning correctly, I verified the Fail2Ban status:
 
-5. Validating Active Defense (Fail2Ban)
-
-To confirm that automated protection was functioning correctly, Fail2Ban status was checked:
-
+```bash
 sudo fail2ban-client status sshd
+```
 
-The output confirmed that repeated failed login attempts triggered automatic banning of the offending IP address, demonstrating the relationship between detection and automated response.
-
-📊 Key Observations
-
-Authentication logs provide detailed insight into system access attempts.
-
-Multiple failed login attempts indicate possible brute-force activity.
-
-Log filtering significantly improves investigation efficiency.
-
-Fail2Ban successfully blocks repeated malicious authentication attempts.
-
-📸 Screenshots
-
-Viewing authentication logs (auth.log)
-
-Failed login filtering output
-
-Failed login attempt count
-
-Example failed login entry showing source IP
-
-Fail2Ban status confirming banned IP
+Evidence: The status report confirms that repeated failed login attempts triggered automatic banning of the offending IP address, demonstrating the relationship between log monitoring and active defense.
