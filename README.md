@@ -29,3 +29,4 @@ I am documenting my 0-100 journey into Cybersecurity. My goal is to understand t
 | **13** | [Firewall Configuration (UFW)](./day13) | UFW, Packet Filtering | ✅ |
 | **14** | [Active Defense (Fail2Ban)](./day14) | IPS Configuration, Banning IPs | ✅ |
 | **15** | [Security Auditing (Lynis)](./day15) | Lynis, Vulnerability Assessment | ✅ |
+| **16** | [Authentication Log Analysis & Brute Force Detection](./day16) | Log Analysis, Fail2Ban Validation, SSH Monitoring | ✅ |
