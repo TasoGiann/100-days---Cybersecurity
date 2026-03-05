@@ -1,10 +1,10 @@
-##🛡️ Day 18: DVWA Setup & First SQL Injection
+## 🛡️ Day 18: DVWA Setup & First SQL Injection
 
-📝 Executive Summary
+## 📝 Executive Summary
 Web applications are among the most targeted attack surfaces in modern environments. Today, I deployed DVWA (Damn Vulnerable Web Application) on the Ubuntu Server and performed the first SQL Injection attack from Kali Linux.
 This exercise simulated a real-world scenario where an attacker exploits unsanitized user input to extract sensitive data directly from a backend database — one of the most critical and widespread vulnerabilities in web security.
 
-💻 Configuration Steps
+## 💻 Configuration Steps
 1️⃣ LAMP Stack Installation
 On the Ubuntu Server, I installed Apache, MySQL, PHP, and required extensions.
 Command used:
